@@ -21,7 +21,12 @@ A beautiful, modern iOS grocery list application built with SwiftUI, featuring g
 
 ## 📱 Screenshots
 
-*Screenshots will be added once the app is running on device/simulator*
+<div align="center">
+  <img src="assets/app-screenshot-1.png" width="300" alt="Voice-Activated Grocery List App - Main Interface" style="margin: 10px;">
+  <img src="assets/app-screenshot-2.png" width="300" alt="Voice-Activated Grocery List App - Voice Recording State" style="margin: 10px;">
+</div>
+
+*Beautiful glassmorphism design with voice-activated grocery list management*
 
 ## 🚀 Getting Started
 
