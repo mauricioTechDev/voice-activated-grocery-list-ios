@@ -35,7 +35,7 @@ A beautiful, modern iOS grocery list application built with SwiftUI, featuring g
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/voice-activated-grocery-list-ios.git
+   git clone https://github.com/mauricioTechDev/voice-activated-grocery-list-ios.git
    cd voice-activated-grocery-list-ios
    ```
 
