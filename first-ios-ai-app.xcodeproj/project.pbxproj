@@ -36,6 +36,8 @@
 		2237605F2E4847F20096115B /* GroceryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListItem.swift; sourceTree = "<group>"; };
 		223760602E4847F20096115B /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		223760612E4847F20096115B /* GlassmorphicBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassmorphicBackground.swift; sourceTree = "<group>"; };
+		223760622E4847F20096115B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		223760632E4847F20096115B /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -84,7 +86,9 @@
 		223760262E4847F00096115B = {
 			isa = PBXGroup;
 			children = (
+				223760622E4847F20096115B /* README.md */,
 				223760592E4847F20096115B /* CLAUDE.md */,
+				223760632E4847F20096115B /* assets */,
 				223760312E4847F00096115B /* first-ios-ai-app */,
 				2237603F2E4847F10096115B /* first-ios-ai-appTests */,
 				223760492E4847F10096115B /* first-ios-ai-appUITests */,
