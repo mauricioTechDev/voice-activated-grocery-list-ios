@@ -27,6 +27,15 @@
 		2237602F2E4847F00096115B /* first-ios-ai-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "first-ios-ai-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2237603C2E4847F10096115B /* first-ios-ai-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "first-ios-ai-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		223760462E4847F10096115B /* first-ios-ai-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "first-ios-ai-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		223760592E4847F20096115B /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
+		2237605A2E4847F20096115B /* GlassmorphicModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassmorphicModifier.swift; sourceTree = "<group>"; };
+		2237605B2E4847F20096115B /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
+		2237605C2E4847F20096115B /* RecordingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingState.swift; sourceTree = "<group>"; };
+		2237605D2E4847F20096115B /* GroceryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListViewModel.swift; sourceTree = "<group>"; };
+		2237605E2E4847F20096115B /* VoiceRecordingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceRecordingButton.swift; sourceTree = "<group>"; };
+		2237605F2E4847F20096115B /* GroceryListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListItem.swift; sourceTree = "<group>"; };
+		223760602E4847F20096115B /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		223760612E4847F20096115B /* GlassmorphicBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassmorphicBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +84,7 @@
 		223760262E4847F00096115B = {
 			isa = PBXGroup;
 			children = (
+				223760592E4847F20096115B /* CLAUDE.md */,
 				223760312E4847F00096115B /* first-ios-ai-app */,
 				2237603F2E4847F10096115B /* first-ios-ai-appTests */,
 				223760492E4847F10096115B /* first-ios-ai-appUITests */,
