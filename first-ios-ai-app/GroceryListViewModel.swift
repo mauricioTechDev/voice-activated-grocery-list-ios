@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import UIKit
 
 class GroceryListViewModel: ObservableObject {
     @Published var items: [GroceryItem] = GroceryItem.sampleItems
@@ -19,9 +20,39 @@ class GroceryListViewModel: ObservableObject {
     }
     
     func toggleItem(with id: String) {
-        if let index = items.firstIndex(where: { $0.id == id }) {
-            items[index].completed.toggle()
+        guard let index = items.firstIndex(where: { $0.id == id }) else { 
+            print("❌ Could not find item with id: \(id)")
+            return 
         }
+        
+        let oldState = items[index].completed
+        
+        // Create a new copy of the item with toggled state
+        var updatedItem = items[index]
+        updatedItem.completed.toggle()
+        
+        print("✅ Toggling '\(updatedItem.name)': \(oldState) → \(updatedItem.completed)")
+        
+        // Replace the item in the array to ensure SwiftUI detects the change
+        items[index] = updatedItem
+        
+        // Add haptic feedback for better user experience
+        if updatedItem.completed {
+            // Item was completed - use impact feedback
+            let impactFeedback = UIImpactFeedbackGenerator(style: .medium)
+            impactFeedback.prepare()
+            impactFeedback.impactOccurred()
+        } else {
+            // Item was uncompleted - use selection feedback
+            let selectionFeedback = UISelectionFeedbackGenerator()
+            selectionFeedback.prepare()
+            selectionFeedback.selectionChanged()
+        }
+        
+        // Force update by explicitly calling objectWillChange if needed
+        objectWillChange.send()
+        
+        print("📊 Progress: \(completedCount)/\(totalCount) (\(Int(completionPercentage))%)")
     }
     
     func startRecording() {
