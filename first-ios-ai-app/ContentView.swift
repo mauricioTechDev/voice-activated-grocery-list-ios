@@ -45,6 +45,7 @@ struct ContentView: View {
                                 LazyVStack(spacing: 12) {
                                     ForEach(viewModel.items) { item in
                                         GroceryListItem(item: item) { id in
+                                            print("🏠 ContentView: Received toggle request for id: \(id)")
                                             viewModel.toggleItem(with: id)
                                         }
                                     }

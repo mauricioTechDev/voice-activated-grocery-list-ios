@@ -3,41 +3,29 @@ import SwiftUI
 struct GroceryListItem: View {
     let item: GroceryItem
     let onToggle: (String) -> Void
-    @State private var isPressed = false
+    @GestureState private var isPressed = false
     
     var body: some View {
         HStack(spacing: 12) {
-            // Custom checkbox
-            Button(action: {
-                withAnimation(.easeInOut(duration: 0.2)) {
-                    onToggle(item.id)
+            // Simplified checkbox - make entire item tappable
+            ZStack {
+                Circle()
+                    .fill(checkboxBackgroundColor)
+                    .frame(width: 24, height: 24)
+                    .overlay(
+                        Circle()
+                            .stroke(checkboxBorderColor, lineWidth: 2)
+                    )
+                    .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
+                
+                if item.completed {
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 12, weight: .bold))
+                        .foregroundColor(.white)
+                        .transition(.scale.combined(with: .opacity))
                 }
-            }) {
-                ZStack {
-                    Circle()
-                        .fill(checkboxBackgroundColor)
-                        .frame(width: 24, height: 24)
-                        .overlay(
-                            Circle()
-                                .stroke(checkboxBorderColor, lineWidth: 2)
-                        )
-                        .shadow(color: .black.opacity(0.1), radius: 2, x: 0, y: 1)
-                    
-                    if item.completed {
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 12, weight: .bold))
-                            .foregroundColor(.white)
-                            .transition(.scale.combined(with: .opacity))
-                    }
-                }
-                .scaleEffect(isPressed ? 0.9 : 1.0)
-                .animation(.easeInOut(duration: 0.1), value: isPressed)
             }
-            .pressEvents {
-                isPressed = true
-            } onRelease: {
-                isPressed = false
-            }
+            .frame(width: 44, height: 44)
             
             // Item content
             VStack(alignment: .leading, spacing: 2) {
@@ -69,11 +57,19 @@ struct GroceryListItem: View {
         )
         .scaleEffect(isPressed ? 0.98 : 1.0)
         .animation(.easeInOut(duration: 0.1), value: isPressed)
-        .pressEvents {
-            isPressed = true
-        } onRelease: {
-            isPressed = false
+        .contentShape(Rectangle()) // Make entire area tappable
+        .onTapGesture {
+            print("🚨 ENTIRE ROW TAPPED - Item: \(item.name), current state: \(item.completed)")
+            withAnimation(.easeInOut(duration: 0.2)) {
+                onToggle(item.id)
+            }
         }
+        .simultaneousGesture(
+            DragGesture(minimumDistance: 0)
+                .updating($isPressed) { _, state, _ in
+                    state = true
+                }
+        )
     }
     
     private var checkboxBackgroundColor: Color {
